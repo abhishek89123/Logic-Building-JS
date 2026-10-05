@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            margin:50px 50px ;
+        }
+        .mainh{
+            text-align: center;
+        }
+        .odiv{
+            display: flex;
+            /* border: 2px solid red; */
+        }
+        .div1{
+            height: 300px;
+            width: 350px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.50);
+            /* border: 2px solid black; */
+            border-radius: 8px;
+            text-align: center;
+            margin:25px;
+        }
+        .in-div{
+            text-align: center;
+        }
+        #n1,#n2,#n3,
+        #domn1,#domn2,#domn3,
+        #Sumn,
+        #Avgn,
+        #cp,#sp,
+        #principal,#rate,#time,
+        #Angle1,#Angle2,
+        #lastNum,
+        #ReNum{
+            height: 25px;
+            width: 300px;
+            border-radius: 5px;
+            border: solid 1px black;
+            margin:3px 0px;
+            padding-left: 5px;
+        }
+        .f1,.f2,.f3{
+            font-size: 20px;
+        }
+        .btn1{
+            height: 30px;
+            width: 300px;
+            border: 1px solid  black;
+            border-radius: 5px;
+            margin:5px 0px;
+            background-color: rgb(15, 43, 196);
+            color: white;
+        }
+        #ca1,
+        #domcal,
+        #sumcal,
+        #Avgcal,
+        #Profcal,
+        #sical,
+        #Angle,
+        #Ld,
+        #RLd,
+        #threeDigit,
+        #fiveDigit,
+        #celsius,
+        #fahrenheit,
+        #basic,
+        #hra,
+        #da,
+        #swapA,
+        #swapB,
+        #swapA2,
+        #swapB2{
+            border: 1px solid black;
+            border-radius: 5px;
+            height: 25px;
+            width: 300px;
+            padding-left: 5px;
+        }
+
+        #basic,
+        #hra,
+        #da,
+        #swapA,
+        #swapB,
+        #swapA2,
+        #swapB2{
+            border: 1px solid black;
+            border-radius: 5px;
+            height: 25px;
+            width: 300px;
+            padding-left: 5px;
+            margin:3px;
+        }
+
+        #result10,
+        #result11,
+        #result12,
+        #result13,
+        #result14{
+            border: 1px solid black;
+            border-radius: 5px;
+            height: 25px;
+            width: 300px;
+            margin: 3px 23px;
+        }
+        
+        #result15,
+        #result16{
+            border: 1px solid black;
+            border-radius: 5px;
+            height: 25px;
+            width: 300px;
+            margin: 3px 23px;
+            font-size: 15px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 class="mainh">LOGIC BUILDING TASK</h1>
+    <div class="odiv">
+        <div class="div1">
+        <h1>1.Average of 3 numbers</h1>
+        <hr>
+        <div class="in-div">
+            <input type="number" placeholder="Enter number 1" id="n1" /> <br />
+            <input type="number" placeholder="Enter number 2" id="n2" /> <br />
+            <input type="number" placeholder="Enter number 3" id="n3" /> <br />
+        </div>
+        <button onclick="displayAvg()" class="btn1"><b>Calculate Average</b></button> 
+        <input type="text" placeholder="Average" id="ca1" />
+        </div>
+
+        <div class="div1">
+            <h1>2.Average of 3 DOM</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter number 1" id="domn1" /> <br />
+                <input type="number" placeholder="Enter number 2" id="domn2" /> <br />
+                <input type="number" placeholder="Enter number 3" id="domn3" /> <br />
+            </div>
+            <button onclick="displayDomAvg()" class="btn1"><b>Calculate Average</b></button> 
+            <input type="text" placeholder="Average" id="domcal" />
+        </div>
+        
+        <div class="div1">
+            <h1>3.Sum of first n</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter number" id="Sumn" /> <br />
+            </div>
+            <button onclick="Sum0fn()" class="btn1"><b>Sum</b></button> 
+            <input type="text" placeholder="Sum" id="sumcal" />
+        </div>
+
+        <div class="div1">
+            <h1>4.Avg of first n</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter number" id="Avgn" /> <br />
+            </div>
+            <button onclick="Avg0fn()" class="btn1"><b>Avg</b></button> 
+            <input type="text" placeholder="Average" id="Avgcal" />
+        </div>
+    </div>
+    <div class="odiv">
+        <div class="div1">
+            <h1>5.Profit Percentage</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter Cost Price" id="cp" /> <br />
+                <input type="number" placeholder="Enter Selling Price" id="sp" />
+            </div>
+            <button onclick="Prof()" class="btn1"><b>Profit</b></button> 
+            <input type="text" placeholder="Profit Percentage" id="Profcal" />
+        </div>
+
+        <div class="div1">
+            <h1>6.Simple Intrest</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter Principle" id="principal" /> <br />
+                <input type="number" placeholder="Enter rate" id="rate" /> <br>
+                <input type="number" placeholder="Enter time" id="time" />
+            </div>
+            <button onclick="simpleInterest()" class="btn1"><b>Result</b></button> 
+            <input type="text" placeholder="Profit Percentage" id="sical" />
+        </div>
+
+        <div class="div1">
+            <h1>7.Missing Angle</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter Angle 1" id="Angle1" /> <br />
+                <input type="number" placeholder="Enter Angle 2" id="Angle2" /> <br>
+            </div>
+            <button onclick="Missingangle()" class="btn1"><b>Result</b></button> 
+            <input type="text" placeholder="Missing Angle" id="Angle" />
+        </div>
+
+        <div class="div1">
+            <h1>8.Last digit of number</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter Number" id="lastNum" /> <br />
+            </div>
+            <button onclick="lastDigit()" class="btn1"><b>Result</b></button> 
+            <input type="text" placeholder="Last Digit" id="Ld" />
+        </div>
+    </div>
+    <div class="odiv">
+
+        <div class="div1">
+            <h1>9.Remove Last digit</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter Number" id="ReNum"> <br>
+            </div>
+            <button onclick="removeLastDigit()" class="btn1"><b>Result</b></button>
+            <input type="text" placeholder="Number After removing LD" id="RLd">
+        </div>
+
+        <div class="div1">
+            <h1>10.First Digit of 3 Digit</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter 3 digit number" id="threeDigit"> <br>
+            </div>
+            <button onclick="firstDigitThree()" class="btn1"><b>Result</b></button>
+            <input id="result10" class="result"></input>
+        </div>
+
+        <div class="div1">
+            <h1>11.First Digit of 5 Digit</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter 5 digit number" id="fiveDigit"> <br>
+            </div>
+            <button onclick="firstDigitFive()" class="btn1"><b>Result</b></button>
+            <input id="result11" class="result"></input>
+        </div>
+
+        <div class="div1">
+            <h1>12.Celsius → Fahrenheit</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter Celsius" id="celsius"> <br>
+            </div>
+            <button onclick="celsiusToFahrenheit()" class="btn1"><b>Convert</b></button>
+            <input id="result12" class="result"></input>
+        </div>
+
+    </div>
+
+    <div class="odiv">
+
+        <div class="div1">
+            <h1>13.Fahrenheit → Celsius</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter Fahrenheit" id="fahrenheit"> <br>
+            </div>
+            <button onclick="fahrenheitToCelsius()" class="btn1"><b>Convert</b></button>
+            <input id="result13" class="result"></input>
+        </div>
+
+        <div class="div1">
+            <h1>14.Gross Salary</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter Basic Salary" id="basic"> <br>
+                <input type="number" placeholder="Enter HRA" id="hra"> <br>
+                <input type="number" placeholder="Enter DA" id="da"> <br>
+            </div>
+            <button onclick="grossSalary()" class="btn1"><b>Result</b></button>
+            <input id="result14" class="result"></input>
+        </div>
+
+        <div class="div1">
+            <h1>15.Swap Using Third</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter A" id="swapA"> <br>
+                <input type="number" placeholder="Enter B" id="swapB"> <br>
+            </div>
+            <button onclick="swapUsingThird()" class="btn1"><b>Swap</b></button>
+            <p id="result15" class="result"></p>
+        </div>
+
+        <div class="div1">
+            <h1>16.Swap Without Third</h1>
+            <hr>
+            <div class="in-div">
+                <input type="number" placeholder="Enter A" id="swapA2"> <br>
+                <input type="number" placeholder="Enter B" id="swapB2"> <br>
+            </div>
+            <button onclick="swapWithoutThird()" class="btn1"><b>Swap</b></button>
+            <p id="result16" class="result"></p>
+        </div>
+
+    </div>
+
+    <script>
+        function displayAvg(){
+            let n1=parseFloat(document.getElementById("n1").value)
+            let n2=parseFloat(document.getElementById("n2").value)
+            let n3=parseFloat(document.getElementById("n3").value)
+            let sum=n1+n2+n3
+            let Avg =sum/3
+            document.getElementById("ca1").value=Avg
+        }
+
+        function displayDomAvg(){
+            let num1=parseFloat(document.getElementById("domn1").value)
+            let num2=parseFloat(document.getElementById("domn2").value)
+            let num3=parseFloat(document.getElementById("domn3").value)
+            let DomAvg = (num1 + num2 + num3) / 3;
+            document.getElementById("domcal").value=DomAvg
+        }
+
+        function Sum0fn(){
+            let numb=parseFloat(document.getElementById("Sumn").value)
+            let Sum = (numb * (numb + 1)) / 2;
+            document.getElementById("sumcal").value=Sum
+        }
+
+        function Avg0fn(){
+            let N=parseFloat(document.getElementById("Avgn").value)
+            let average = (N + 1) / 2;
+            document.getElementById("Avgcal").value=average
+        }
+
+        function Prof(){
+            let cp=parseFloat(document.getElementById("cp").value)
+            let sp=parseFloat(document.getElementById("sp").value)
+            let profit = sp - cp;
+            let profitPercentage = (profit / cp) * 100;
+            document.getElementById("Profcal").value=profitPercentage
+        }
+
+        function simpleInterest() {
+            let p = Number(document.getElementById("principal").value);
+            let r = Number(document.getElementById("rate").value);
+            let t = Number(document.getElementById("time").value);
+            let si = (p * r * t) / 100;
+            document.getElementById("sical").value=si;
+        }
+
+        function Missingangle() {
+            let A1 = Number(document.getElementById("Angle1").value);
+            let A2 = Number(document.getElementById("Angle2").value);
+            let A3 = 180-A1-A2;
+            document.getElementById("Angle").value=A3;
+        }
+
+        function lastDigit() {
+            let num = Number(document.getElementById("lastNum").value);
+            let digit = num % 10;
+            document.getElementById("Ld").value=digit;
+        }
+
+        function removeLastDigit() {
+            let num = Number(document.getElementById("ReNum").value);
+            let result = Math.floor(num/10);
+            document.getElementById("RLd").value=result;
+        }
+
+
+        function firstDigitThree() {
+            let num = Number(document.getElementById("threeDigit").value);
+            let first = Math.floor(num / 100);
+            document.getElementById("result10").value=first;
+        }
+
+
+        function firstDigitFive() {
+            let num = Number(document.getElementById("fiveDigit").value);
+            let first = Math.floor(num / 10000);
+            document.getElementById("result11").value =first;
+        }
+
+
+        function celsiusToFahrenheit() {
+            let celsius = Number(document.getElementById("celsius").value);
+            let fahrenheit = (celsius * 9 / 5) + 32;
+            document.getElementById("result12").value =fahrenheit;
+        }
+
+        function fahrenheitToCelsius() {
+            let fahrenheit = Number(document.getElementById("fahrenheit").value);
+            let celsius = (fahrenheit - 32) * 5 / 9;
+            document.getElementById("result13").value=celsius
+        }
+
+        function grossSalary() {
+            let basic = Number(document.getElementById("basic").value);
+            let hra = Number(document.getElementById("hra").value);
+            let da = Number(document.getElementById("da").value);
+            let grossSalary = basic + hra + da;
+            document.getElementById("result14").value=grossSalary;
+        }
+
+        function swapUsingThird() {
+            let a = Number(document.getElementById("swapA").value);
+            let b = Number(document.getElementById("swapB").value);
+            let temp = a;
+            a = b;
+            b = temp;
+            document.getElementById("result15").innerHTML =
+                "After Swap: A = " + a + ", B = " + b;
+        }
+
+        function swapWithoutThird() {
+            let a = Number(document.getElementById("swapA2").value);
+            let b = Number(document.getElementById("swapB2").value);
+            a = a + b;
+            b = a - b;
+            a = a - b;
+            document.getElementById("result16").innerHTML =
+                "After Swap: A = " + a + ", B = " + b;
+        }
+    </script>
+  </body>
+</html>
